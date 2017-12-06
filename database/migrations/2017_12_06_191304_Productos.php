@@ -17,7 +17,7 @@ class Productos extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->int('cost');
+            $table->integer('cost');
             $table->smallInteger('users_id')->unsigned()->index();
             $table->timestamps();
         });
