@@ -11,13 +11,13 @@
                 {{ csrf_field() }}
 
                 <label>Información personal</label><br>
-                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
                        
-                        <input class="campo1" type="text" name="name" placeholder="Nombre" value="{{ old('name') }}" required autofocus>
+                        <input class="campo1" type="text" name="nombre" placeholder="Nombre" value="{{ old('name') }}"  autofocus>
                             
-                            @if ($errors->has('name'))
+                            @if ($errors->has('nombre'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('nombre') }}</strong>
                                     </span>
                             @endif
                          
@@ -25,7 +25,7 @@
 
                     <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
 
-                        <input class="campo1" type="text" name="last_name" placeholder="Apellido" value="{{ old('last_name') }}" required autofocus>
+                        <input class="campo1" type="text" name="last_name" placeholder="Apellido" value="{{ old('last_name') }}"  autofocus>
 
                             @if ($errors->has('last_name'))
                                     <span class="help-block">
@@ -37,7 +37,7 @@
                     
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
-                        <input class="campo1" type="email" name="email" placeholder="Correo electrónico" value="{{old('email') }}" required autofocus>
+                        <input class="campo1" type="email" name="email" placeholder="Correo electrónico" value="{{old('email') }}"  autofocus>
                         
                             @if ($errors->has('email'))
                                     <span class="help-block">
@@ -47,13 +47,13 @@
                          
                     </div>
 
-                    <div class="form-group{{ $errors->has('phono') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
 
-                        <input class="campo1" type="numeric" name="phono" placeholder="Telefono" value="{{old('phono') }}" required autofocus>
+                        <input class="campo1" type="numeric" name="phone" placeholder="Telefono" value="{{old('phono') }}"  autofocus>
                         
-                            @if ($errors->has('phono'))
+                            @if ($errors->has('phone'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('phono') }}</strong>
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                             @endif
                          
@@ -61,7 +61,7 @@
 
                     <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
 
-                        <input class="campo1" type="text" name="address" placeholder="Direccion" value="{{old('address') }}" required autofocus>
+                        <input class="campo1" type="text" name="address" placeholder="Direccion" value="{{old('address') }}"  autofocus>
                         
                             @if ($errors->has('address'))
                                     <span class="help-block">
@@ -75,7 +75,7 @@
 
                     <div class="form-group{{ $errors->has('user_name') ? ' has-error' : '' }}">
 
-                        <input class="campo1" type="text" name="user_name" placeholder="Nombre de usuario" value="{{old('user_name') }}" required autofocus>
+                        <input class="campo1" type="text" name="user_name" placeholder="Nombre de usuario" value="{{old('user_name') }}"  autofocus>
                         
                             @if ($errors->has('user_name'))
                                     <span class="help-block">
@@ -87,7 +87,7 @@
 
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                         
-                        <input class="campo1" type="password" name="password" placeholder="Contraseña" required>
+                        <input class="campo1" type="password" name="password" placeholder="Contraseña" >
 
                             @if ($errors->has('password'))
                                 <span class="help-block">
@@ -98,8 +98,12 @@
                         
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
-                        <input class="campo1" type="password" name="cpassword" placeholder="Confirmar contraseña" required>
-
+                        <input class="campo1" type="password" name="password_confirmation" placeholder="Confirmar contraseña" >
+                            @if ($errors->has('password_confirmation'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                </span>
+                            @endif
                            
                     </div>
 
